@@ -15,7 +15,7 @@ export default function App() {
           <Text>My name is {name}</Text>
           <Text>My age is {person.age} and I'm a {person.skill}</Text>
           <View style={styles.btnContainer}>
-            <Button title='click to Update' onPress={clickkHandler} />
+            <Button title='click to Update' onPress={clickHandler} />
           </View>
       <StatusBar style="auto" />
     </View>

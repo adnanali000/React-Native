@@ -1,20 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React,{useState} from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
+  const [name,setName] = useState('adnan');
+  const [person,setPerson] = useState({skill:'Web Developer',age:21})
+
+  const clickHandler = ()=>{
+    setName('adnan ali');
+    setPerson({skill:'Web and Mobile App Developer',age:22});
+  }
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-          <Text style={styles.title}>HELLO WORLD</Text>
-      </View>
-
-      <View style={styles.header}>
-          <Text style={styles.para}>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Text>
-          <Text style={styles.title}>Lorem, ipsum dolor sit amet adipisicing elit.</Text>
-          <Text style={styles.para}>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</Text>
-          <Text style={styles.title}>Lorem, ipsum dolor sit consectetur adipisicing elit.</Text>
-      </View>
+          <Text>My name is {name}</Text>
+          <Text>My age is {person.age} and I'm a {person.skill}</Text>
+          <View style={styles.btnContainer}>
+            <Button title='click to Update' onPress={clickkHandler} />
+          </View>
       <StatusBar style="auto" />
     </View>
   );
@@ -27,16 +29,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  header:{
-    backgroundColor:'red',
-    padding:20,
-    marginTop:10
-  },
-  title:{
-    color:"white",
-    fontWeight:"bold"
-  },
-  para:{
-    color:"white",
+  btnContainer:{
+    margin:10,
+    backgroundColor:'wheat',
   }
+ 
 });

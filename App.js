@@ -3,12 +3,17 @@ import React,{useState} from 'react';
 import { StyleSheet, Text, View,FlatList} from 'react-native';
 import Header from './components/Header';
 import TodoItem from './components/TodoItem';
+import AddTodo from './components/AddTodo';
+
 
 export default function App() {
   const [todos,setTodos] = useState([
     {text:'create an todo app',key:'1'},
     {text:'create an travel app',key:'2'},
     {text:'create an food delivery app',key:'3'},
+    {text:'create an tax delivery app',key:'4'},
+    {text:'create an e-commerce delivery app',key:'5'},
+
   ])
 
   const deleteHandler = (key)=>{
@@ -17,12 +22,23 @@ export default function App() {
     })
   }
 
+  const addTodo = (text)=>{
+    setTodos((prevTodos)=>{
+      return [
+        {text:text,key:Math.random().toString()},
+        ...prevTodos
+      ]
+    })
+  }
+
+
   return (
     <View style={styles.container}>
         {/* header */}
         <Header/>
         <View style={styles.content}>
           {/* todo form */}
+          <AddTodo addTodo = {addTodo} />
           <View style={styles.list}>
             {/* list item  */}
               <FlatList

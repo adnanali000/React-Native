@@ -1,58 +1,34 @@
 import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
-import { StyleSheet, Text, View,ScrollView,FlatList,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View,FlatList} from 'react-native';
+import Header from './components/Header';
 
 export default function App() {
-  const [people,setPeople] = useState([
-    {name:'adnan',id:'1'},
-    {name:'faham',id:'2'},
-    {name:'wasim',id:'3'},
-    {name:'suffyan',id:'4'},
-    {name:'najam',id:'5'},
-    {name:'tayyab',id:'6'},
-    {name:'fazeel',id:'7'},
-    {name:'anas',id:'8'},
-    {name:'salman',id:'9'},
-    {name:'ahmed',id:'10'},
-
-  ]);
-  
-  const pressHandler = (id)=>{
-    // alert(id);
-    setPeople((prevPeople)=>{
-      return prevPeople.filter(person => person.id != id);
-    })
-  }
+  const [todos,setTodos] = useState([
+    {text:'create an todo app',key:'1'},
+    {text:'create an travel app',key:'2'},
+    {text:'create an food delivery app',key:'3'},
+  ])
 
   return (
     <View style={styles.container}>
+        {/* header */}
+        <Header/>
+        <View style={styles.content}>
+          {/* todo form */}
+          <View style={styles.list}>
+            {/* list item  */}
+              <FlatList
+                data={todos}
+                renderItem = {({item})=>(
+                    <Text>{item.text}</Text>
+                )}
+              />
 
-    <FlatList
-      numColumns={2}
-      keyExtractor={(item)=>item.id}
-      data = {people}
-      renderItem={({item})=>(
-        <TouchableOpacity onPress={()=>pressHandler(item.id)}>
-          <Text style={styles.li}>{item.name}</Text>
-        </TouchableOpacity>
-      )}
-    />
-      
-
-    {/* <ScrollView>  
-     {
-       people.map((item)=>{
-         return(
-            <View key={item.key}>
-                <Text  style={styles.li}>{item.name}</Text>
-            </View>
-         )
-       })
-     }
-     </ScrollView> */}
-
-      <StatusBar style="auto" />
-    </View>
+          </View>
+        </View>
+     </View> 
+   
   );
 }
 
@@ -60,21 +36,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingTop:40,
-    paddingHorizontal:20,
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
-  li:{
-    color:'white',
-    fontSize:24,
-    textAlign:"center",
-    marginTop:30,
-    padding:30,
-    backgroundColor:"red",
-    marginHorizontal:10,
-    width:170
-
+  content:{
+    padding:40
+  },
+  list:{
+    marginTop:30
   }
+
+ 
  
 });

@@ -1,13 +1,48 @@
-import { StatusBar } from 'expo-status-bar';
+// import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
 import { StyleSheet, Text, View,FlatList,Alert,TouchableWithoutFeedback,Keyboard} from 'react-native';
+
+// review app 
+import Home from './screens/Home';
+
+
+
+
+
+
+
+// todo app 
 // import Header from './components/Header';
 // import TodoItem from './components/TodoItem';
 // import AddTodo from './components/AddTodo';
 // import Sandbox from './components/Sandbox';
 
-
 export default function App() {
+
+// review app   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  // todo app 
+
   // const [todos,setTodos] = useState([
   //   {text:'create an todo app',key:'1'},
   //   {text:'create an travel app',key:'2'},
@@ -41,12 +76,9 @@ export default function App() {
 
 
   return (
+    // review app 
 
-
-    <View>
-      <Text>Hello world</Text>
-    </View>
-
+        <Home />
 
 
 
@@ -62,6 +94,7 @@ export default function App() {
 
 
 
+    // todo app 
 
     // <Sandbox />
   // <TouchableWithoutFeedback onPress={()=>{
@@ -86,14 +119,22 @@ export default function App() {
   //       </View>
   //    </View> 
   //    </TouchableWithoutFeedback>
+  
+  
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
+  // review app 
+ 
+  
+  
+  
+  // todo app 
+  // container: {
+  //   flex: 1,
+  //   backgroundColor: '#fff',
+  // },
   // content:{
   //   padding:40,
   //   // backgroundColor:'pink',

@@ -15,5 +15,13 @@ export const globalStyles = StyleSheet.create({
         lineHeight:20,
         fontFamily:'nunito-regular'
 
+    },
+    buttton:{
+        borderWidth:1,
+        fontSize:16,
+        borderColor:'red',
+        margin:16,
+        color:'grey'
+        
     }
 })

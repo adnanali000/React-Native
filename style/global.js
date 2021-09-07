@@ -21,7 +21,6 @@ export const globalStyles = StyleSheet.create({
         fontSize:16,
         borderColor:'red',
         margin:16,
-        color:'grey'
         
     }
 })

@@ -9,9 +9,29 @@ const Stack = createStackNavigator();
 export default HomeStack = ()=>{
      return (
      <NavigationContainer>
-        <Stack.Navigator>
-            <Stack.Screen name='Home' component={Home} />
-            <Stack.Screen name='ReviewDetails' component={ReviewDetails} />
+         {/* same styling of header on all screens belong to this stack  */}
+        <Stack.Navigator
+            screenOptions={{
+                headerStyle:{
+                    backgroundColor:'red'
+                },
+                headerTitleStyle:{
+                    fontWeight:'bold',
+                    color:'white',
+                },
+                headerBackTitleStyle:{
+                    color:'white'
+                },
+              }}
+            >
+            <Stack.Screen 
+                name='Home' 
+                component={Home}  
+            />
+            <Stack.Screen
+             name='ReviewDetails' 
+             component={ReviewDetails}
+             />
         </Stack.Navigator>
     </NavigationContainer>
      )

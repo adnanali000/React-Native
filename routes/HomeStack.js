@@ -22,6 +22,7 @@ export default HomeStack = ()=>{
                 headerBackTitleStyle:{
                     color:'white'
                 },
+                headerTintColor: 'white'
               }}
             >
             <Stack.Screen 

@@ -3,13 +3,14 @@ import {View,Text,Button,StyleSheet,TextInput,Keyboard,TouchableWithoutFeedback}
 import { globalStyles } from '../style/global'
 import {Formik, formik} from 'formik';
 
-export default function ReviewForm(){
+export default function ReviewForm({addReview}){
     return(
         <View style={globalStyles.container}>
             <Formik
                 initialValues={{title:'',body:'',rating:''}}
-                onSubmit={(values)=>{
-                    console.log(values)
+                onSubmit={(values,actions)=>{
+                    actions.resetForm();
+                    addReview(values);
                 }}
             >
             
@@ -28,7 +29,7 @@ export default function ReviewForm(){
                         placeholder='Review body'
                         onChangeText={formikProps.handleChange('body')}
                         value={formikProps.values.body}
-                    />
+                    /> 
                     <TextInput
                         multiline
                         style={globalStyles.input}

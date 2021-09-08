@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {View,Text,Button,StyleSheet,FlatList,TouchableOpacity,Modal} from 'react-native';
+import {View,Text,Button,StyleSheet,FlatList,TouchableOpacity,Modal,TouchableWithoutFeedback, Keyboard} from 'react-native';
 import Card from '../shared/Card';
 import { globalStyles } from '../style/global'
 import {MaterialIcons} from '@expo/vector-icons';
@@ -13,11 +13,22 @@ export default function Home({navigation}) {
         {title:'Gotta catch them all',rating:'2',body:'lorem epsum',key:'3'},
         {title:'Review app',rating:'1',body:'lorem epsum',key:'4'},
     ])
+
+    const addReview = (review)=>{
+        review.key = Math.random().toString();
+        setReviews((currentReview)=>{
+            return [review,...currentReview];
+        })
+        setModalOpen(false);
+    }
+
+
     
     return (
         <View style={globalStyles.container}>
 
             <Modal visible={modalOpen} animationType='slide'>
+                <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View style={styles.modalContent}>
                 <MaterialIcons
                 name='close'
@@ -25,8 +36,9 @@ export default function Home({navigation}) {
                 style={{...styles.modalToggle,...styles.modalClose}}
                 onPress={()=>setModalOpen(false)}
             />
-                    <ReviewForm />
+                    <ReviewForm addReview = {addReview} />
                 </View>
+                </TouchableWithoutFeedback>
             </Modal>
 
             <MaterialIcons

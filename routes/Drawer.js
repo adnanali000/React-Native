@@ -6,6 +6,7 @@ import React from 'react';
 
 
 
+
 const Drawer = createDrawerNavigator();
 
 export default Navigator = () => {
@@ -13,7 +14,7 @@ export default Navigator = () => {
         <NavigationContainer>
             <Drawer.Navigator>
                 <Drawer.Screen 
-                name='Home'
+                 name='Home'
                 options={{drawerLabel: 'Home', }}
                 component={HomeStack} />
                 <Drawer.Screen name="About" component={AboutStack} />

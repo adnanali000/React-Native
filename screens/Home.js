@@ -9,6 +9,8 @@ export default function Home({navigation}) {
         {title:'Zeida,Breath of Fresh Air',rating:'5',body:'lorem epsum',key:'1'},
         {title:'Not so final fantasy',rating:'4',body:'lorem epsum',key:'2'},
         {title:'Gotta catch them all',rating:'2',body:'lorem epsum',key:'3'},
+        {title:'Review app',rating:'1',body:'lorem epsum',key:'4'},
+
 
     ])
     

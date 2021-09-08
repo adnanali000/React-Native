@@ -30,7 +30,15 @@ export const globalStyles = StyleSheet.create({
         borderColor:'grey',
         borderRadius:5,
         color:'grey',
+    },
+    error:{
+        color:'red',
+        fontSize:10,
+        textAlign:'center',
+        fontWeight:'bold',
+        marginBottom:10
     }
+
 })
 
 export const  images = {

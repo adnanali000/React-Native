@@ -3,6 +3,7 @@ import {View,Text,Button,StyleSheet,FlatList,TouchableOpacity,Modal} from 'react
 import Card from '../shared/Card';
 import { globalStyles } from '../style/global'
 import {MaterialIcons} from '@expo/vector-icons';
+import ReviewForm from './ReviewForm';
 
 export default function Home({navigation}) {
     const [modalOpen,setModalOpen] = useState(false)
@@ -11,8 +12,6 @@ export default function Home({navigation}) {
         {title:'Not so final fantasy',rating:'4',body:'lorem epsum',key:'2'},
         {title:'Gotta catch them all',rating:'2',body:'lorem epsum',key:'3'},
         {title:'Review app',rating:'1',body:'lorem epsum',key:'4'},
-
-
     ])
     
     return (
@@ -26,7 +25,7 @@ export default function Home({navigation}) {
                 style={{...styles.modalToggle,...styles.modalClose}}
                 onPress={()=>setModalOpen(false)}
             />
-                    <Text>Hello from the modal.</Text>
+                    <ReviewForm />
                 </View>
             </Modal>
 

@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import * as Font from 'expo-font';
 import Home from './screens/Home';
 import AppLoading from 'expo-app-loading';
-import HomeStack from './routes/HomeStack';
+import Navigator from './routes/Drawer';
 
 //font function
 
@@ -18,7 +18,7 @@ export default function App() {
 
   if(fontLoaded){
     return (
-      <HomeStack />
+      <Navigator />
     );
   }
   else{

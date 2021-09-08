@@ -3,6 +3,7 @@ import {View,Text,Button,StyleSheet,TextInput,Keyboard,TouchableWithoutFeedback}
 import { globalStyles } from '../style/global'
 import {Formik} from 'formik';
 import * as yup from 'yup';
+import FlatButton from '../shared/Button';
 
 const reviewSchema = yup.object({
     title: yup.string().required().min(4),
@@ -55,12 +56,9 @@ export default function ReviewForm({addReview}){
 
                     />
                     <Text style={globalStyles.error}>{formikProps.touched.rating && formikProps.errors.rating}</Text>
+                    
+                    <FlatButton text="submit" onPress={formikProps.handleSubmit} />
 
-
-                <View style={globalStyles.buttton}>
-                    <Button title='submit' color='red' onPress={formikProps.handleSubmit} />
-                </View>
-                
                 </View>
             )}
 
